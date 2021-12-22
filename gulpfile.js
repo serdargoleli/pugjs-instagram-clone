@@ -11,7 +11,7 @@ const terser = require("gulp-terser");
 function compileHtml() {
   return src("app/views/*.pug")
     .pipe(pug({ pretty: true }))
-    .pipe(dest("dist/html"));
+    .pipe(dest("./"));
 }
 
 // scss
@@ -20,14 +20,16 @@ function compileScss() {
 }
 
 // js
-function jsMin() {
-  return src("app/assets/js/**/*.js").pipe(terser()).pipe(dest("dist/js/"));
-}
+// function jsMin() {
+//   return src("app/assets/js/**/*.js").pipe(terser()).pipe(dest("dist/js/"));
+// }
 
 // watch
 function watchTask() {
-  watch(["app/views/*.pug", "app/assets/scss/**/*.scss", "app/assets/js/**/*.js"], series(compileHtml, compileScss, jsMin));
+  watch(["app/views/**/*.pug", "app/assets/scss/**/*.scss"], series(compileHtml, compileScss));
+  // watch(["app/views/**/*.pug", "app/assets/scss/**/*.scss", "app/assets/js/**/*.js"], series(compileHtml, compileScss, jsMin));
 }
 
 // defaults
-exports.default = series(compileHtml, compileScss, jsMin, watchTask);
+exports.default = series(compileHtml, compileScss, watchTask);
+// exports.default = series(compileHtml, compileScss, jsMin, watchTask);

@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: none !important;
+  }
+}
+
+body {
+  font-family: $font-family;
+  background-color: $body-color;
+  font-size: $regular-size;
+}
+a {
+  color: $black-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 975px;
+  margin-right: auto;
+  margin-left: auto;
+}

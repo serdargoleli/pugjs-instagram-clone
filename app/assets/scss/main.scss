@@ -1,1 +1,14 @@
+// Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap.scss";
+
+//veriables
+@import "veriables";
+
+// mixin
+@import "mixins/mixin";
+
+// base
+@import "base/base";
+
+// components
+@import "components/navbar";
