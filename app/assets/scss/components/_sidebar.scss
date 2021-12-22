@@ -1,4 +1,9 @@
 .sidebar {
+  position: fixed;
+  top: 94px;
+  height: 100vh;
+  max-width: 293px;
+
   .user-box {
     @include flex($jc: space-between);
     height: auto;

@@ -3,8 +3,14 @@ extends layout/layout.pug
 block content 
     main.main.container
         .row
-            .col-12.col-md-8
+            .col-12.col-lg-8
                 include ./partials/main-content 
-            .col-12.col-md-4
+
+            .d-none.d-lg-block.col-lg-4.position-relative
                 include ./partials/sidebar 
+
+
+
+
+
 

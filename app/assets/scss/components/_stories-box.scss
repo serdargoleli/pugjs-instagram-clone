@@ -1,10 +1,21 @@
 .stories {
   @include flex($jc: space-between);
+  overflow-x: scroll;
   padding: 16px;
   width: 100%;
   border: 1px solid $border-color;
   background: $white-color;
   border-radius: $radius;
+  @include mq("desktop") {
+    overflow-x: auto;
+  }
+  &-box {
+    width: 80px;
+    margin-right: 10px;
+    @include mq("desktop") {
+      margin-right: 0;
+    }
+  }
   .img-box {
     height: 66px;
     width: 66px;
@@ -16,7 +27,6 @@
     background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-
     @include flex();
     img {
       width: 100%;

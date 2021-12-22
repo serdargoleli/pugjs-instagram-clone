@@ -1,0 +1,103 @@
+.single-post {
+  margin-top: 24px;
+  background: $white-color;
+  border: 1px solid $border-color;
+  a {
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+      color: $black-color;
+    }
+  }
+  &-header {
+    border-bottom: 1px solid $border-color;
+    padding: 14px 16px;
+    @include flex($jc: space-between);
+    .user-box {
+      @include flex($jc: flex-start);
+      .img-box {
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    a {
+      margin-left: 14px;
+    }
+  }
+  &-content {
+    .carousel-inner {
+      button {
+        span {
+          background-color: #b3b3b3;
+          border-radius: 50%;
+          @include flex();
+          background-size: 50% 50%;
+        }
+      }
+    }
+    .carousel-indicators {
+      bottom: -38px;
+      & [data-bs-target] {
+        border: none;
+        box-sizing: border-box;
+        width: 6px;
+        height: 6px;
+        background: $muted-color;
+        opacity: 1;
+        border-radius: 50%;
+        &.active {
+          background: $blue-color;
+        }
+      }
+    }
+  }
+  &-buttons {
+    padding: 14px 16px 0;
+    @include flex($jc: space-between);
+    a {
+      margin-right: 16px;
+      &:hover {
+        text-decoration: none;
+        & svg {
+          color: $muted-color !important;
+        }
+      }
+    }
+    .left {
+      @include flex($jc: flex-start);
+    }
+  }
+  &-comments {
+    border-bottom: 1px solid $border-color;
+    padding: 8px 16px;
+    .total-comments {
+      font-weight: 400;
+    }
+  }
+  &-footer {
+    padding: 6px 16px;
+    @include flex($jc: space-between);
+    .emoji {
+      padding: 8px 16px 8px 0;
+    }
+    input {
+      width: 100%;
+      border: none;
+      padding-right: 5px;
+    }
+    .send {
+      color: $blue-color;
+      &:hover {
+        color: $blue-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
