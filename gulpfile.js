@@ -4,7 +4,6 @@ const sass = require("gulp-sass")(require("sass"));
 const prefixer = require("gulp-autoprefixer");
 const minify = require("gulp-clean-css");
 const terser = require("gulp-terser");
-const browsersync = require("browser-sync");
 
 // create functions
 
@@ -25,26 +24,10 @@ function jsMin() {
   return src("app/assets/js/**/*.js").pipe(terser()).pipe(dest("dist/js/"));
 }
 
-// Browsersync
-function browsersyncServe(cb) {
-  browsersync.init({
-    server: {
-      baseDir: "dist/html/",
-    },
-  });
-  cb();
-}
-
-function browsersyncReload(cb) {
-  browsersync.reload();
-  cb();
-}
-
 // watch
 function watchTask() {
-  watch("app/dist/html/*.html", browsersyncReload);
-  watch(["app/views/*.pug", "app/assets/scss/**/*.scss", "app/assets/js/**/*.js"], series(compileHtml, compileScss, jsMin, browsersyncReload));
+  watch(["app/views/*.pug", "app/assets/scss/**/*.scss", "app/assets/js/**/*.js"], series(compileHtml, compileScss, jsMin));
 }
 
 // defaults
-exports.default = series(compileHtml, compileScss, jsMin, browsersyncServe, watchTask);
+exports.default = series(compileHtml, compileScss, jsMin, watchTask);
