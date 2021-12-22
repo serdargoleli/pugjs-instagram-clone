@@ -1,4 +1,10 @@
 extends layout/layout.pug
 
 block content 
-    p test
+    main.main.container
+        .row
+            .col-12.col-md-8
+                include ./partials/main-content 
+            .col-12.col-md-4
+                include ./partials/sidebar 
+
