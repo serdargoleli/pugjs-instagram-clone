@@ -1,0 +1,33 @@
+.stories {
+  @include flex($jc: space-between);
+  padding: 16px;
+  width: 100%;
+  border: 1px solid $border-color;
+  background: $white-color;
+  border-radius: $radius;
+  .img-box {
+    height: 66px;
+    width: 66px;
+    padding: 2px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 3px;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+
+    @include flex();
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+  .username {
+    text-align: center;
+    font-size: $small-size;
+    margin-bottom: 0;
+  }
+}
